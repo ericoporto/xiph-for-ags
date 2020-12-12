@@ -3,7 +3,7 @@
     <metadata>
         <authors>ericoporto</authors> 
         <id>ericoporto.xiph-for-ags</id>
-        <version>2020.12.12</version>
+        <version>2020.12.12.1</version>
         <description>Xiph libraries needed for developing AGS on Windows</description>
         <tags>Native, native</tags>
     </metadata>
