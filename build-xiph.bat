@@ -27,6 +27,20 @@ copy %TEMP%\vcpkg\installed\x86-windows-static\include\ogg\*.h include\ogg\
 copy %TEMP%\vcpkg\installed\x86-windows-static\include\theora\*.h include\theora\
 copy %TEMP%\vcpkg\installed\x86-windows-static\include\vorbis\*.h include\vorbis\
 
-type %TEMP%\vcpkg\installed\x86-windows-static\share\libogg\copyright %TEMP%\vcpkg\installed\x86-windows-static\share\libtheora\copyright %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright > LICENSE.txt
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libogg\copyright
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libtheora\copyright
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright 
+
+echo xiph libogg libtheora libvorbis licenses > LICENSE.txt
+echo . >> LICENSE.txt
+echo libogg LICENSE >> LICENSE.txt
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libogg\copyright >> LICENSE.txt
+echo . >> LICENSE.txt
+echo libtheora LICENSE >> LICENSE.txt
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libtheora\copyright >> LICENSE.txt
+echo . >> LICENSE.txt
+echo libvorbis LICENSE >> LICENSE.txt
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright  >> LICENSE.txt
+echo . >> LICENSE.txt
 
 echo succesfully copied files!
