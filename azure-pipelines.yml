@@ -10,5 +10,33 @@ pool:
 steps:
 - script: call build-xiph.bat
   displayName: 'bootstrap and build vcpkg and xiph libraries'
+  
 - script: call pack-xiph.bat
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/') 
   displayName: 'package xiph libraries as NuGet package'
+  
+- bash: echo "##vso[task.setvariable variable=tagname]$(git describe --tags $(git rev-list --tags --max-count=1))"
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/') 
+  
+- task: ArchiveFiles@2
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/') 
+  inputs:
+    rootFolderOrFile: '$(Build.SourcesDirectory)' 
+    includeRootFolder: true 
+    replaceExistingArchive: true 
+    archiveType: 'zip'
+    archiveFile: '$(Build.SourcesDirectory)/builds/$(Build.BuildId).zip'
+  
+- task: GithubRelease@0
+  condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')   
+  displayName: 'Create GitHub Release'
+  inputs:
+    tagSource: 'auto'
+    tag: $(tagname)
+    assetUploadMode: 'replace'
+    action: 'edit'
+    gitHubConnection: xiph-for-ags
+    repositoryName: ericoporto/xiph-for-ags
+    assets: |
+         $(Build.SourcesDirectory)/builds/nuget/x86/*.nupkg
+         $(Build.SourcesDirectory)/builds/*.zip
