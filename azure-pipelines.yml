@@ -10,13 +10,8 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
-- task: CmdLine@2
-  displayName: 'bootstrap and build vcpkg'
-  inputs:
-    script: |
-      echo Write your commands here
-      
-      echo Hello world
+- script: build-xiph.bat
+  displayName: 'bootstrap and build vcpkg and xiph libraries'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
