@@ -7,7 +7,8 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
-- script: build-xiph.bat
+steps:
+- script: call build-xiph.bat
   displayName: 'bootstrap and build vcpkg and xiph libraries'
 
 - script: |
