@@ -13,6 +13,6 @@
         <file src="lib\*.*"       target="native\lib"     />
         <file src="include\**\*.*"   target="native\include" />
         <file src="README.md"        target="native"      />
-        <file src="LICENSE.txt"        target="native"      />
+        <file src="LICENSE.txt"        target=""      />
     </files>
 </package>
