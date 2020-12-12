@@ -1,4 +1,4 @@
-echo on
+@echo on
 echo creating directories...
 
 IF exist %TEMP%\nul ( echo %TEMP% ) ELSE ( mkdir %TEMP% )
