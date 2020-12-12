@@ -10,8 +10,5 @@ pool:
 steps:
 - script: call build-xiph.bat
   displayName: 'bootstrap and build vcpkg and xiph libraries'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: call pack-xiph.bat
+  displayName: 'package xiph libraries as NuGet package'
