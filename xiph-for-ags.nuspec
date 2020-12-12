@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <package >
     <metadata>
+        <license type="file">LICENSE.txt</license>
         <authors>ericoporto</authors> 
         <id>ericoporto.xiph-for-ags</id>
         <version>2020.12.12.1</version>
