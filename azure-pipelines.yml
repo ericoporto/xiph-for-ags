@@ -22,10 +22,10 @@ steps:
   condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/') 
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)' 
-    includeRootFolder: true 
+    includeRootFolder: false 
     replaceExistingArchive: true 
     archiveType: 'zip'
-    archiveFile: '$(Build.SourcesDirectory)/builds/$(Build.BuildId).zip'
+    archiveFile: '$(Build.SourcesDirectory)/builds/xiph-for-ags.zip'
   
 - task: GithubRelease@0
   condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')   
