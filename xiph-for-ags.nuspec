@@ -4,7 +4,7 @@
         <license type="file">LICENSE.txt</license>
         <authors>ericoporto</authors> 
         <id>ericoporto.xiph-for-ags</id>
-        <version>2020.12.12.1</version>
+        <version>2021.08.03.0</version>
         <description>Xiph libraries needed for developing AGS on Windows</description>
         <tags>Native, native</tags>
     </metadata>
