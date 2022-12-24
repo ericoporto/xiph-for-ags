@@ -5,7 +5,7 @@ trigger:
       - refs/tags/*
 
 pool:
-  vmImage: 'vs2017-win2016'
+  vmImage: 'windows-2019'
 
 steps:
 - script: call build-xiph.bat
@@ -38,5 +38,5 @@ steps:
     gitHubConnection: xiph-for-ags
     repositoryName: ericoporto/xiph-for-ags
     assets: |
-         $(Build.SourcesDirectory)/builds/nuget/x86/*.nupkg
+         $(Build.SourcesDirectory)/builds/nuget/*.nupkg
          $(Build.SourcesDirectory)/builds/*.zip

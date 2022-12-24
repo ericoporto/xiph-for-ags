@@ -4,13 +4,14 @@
         <license type="file">LICENSE.txt</license>
         <authors>ericoporto</authors> 
         <id>ericoporto.xiph-for-ags</id>
-        <version>2021.08.03.0</version>
+        <version>2022.12.23.0</version>
         <description>Xiph libraries needed for developing AGS on Windows</description>
         <tags>Native, native</tags>
     </metadata>
     
     <files>
-        <file src="lib\*.*"       target="native\lib"     />
+        <file src="lib\x86\*.*"       target="native\lib\x86"     />
+        <file src="lib\x64\*.*"       target="native\lib\x64"     />
         <file src="include\**\*.*"   target="native\include" />
         <file src="README.md"        target="native"      />
         <file src="LICENSE.txt"        target=""      />
