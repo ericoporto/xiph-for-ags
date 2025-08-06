@@ -49,7 +49,7 @@ echo libtheora LICENSE >> LICENSE.txt
 type %TEMP%\vcpkg\installed\x86-windows-static\share\libtheora\copyright >> LICENSE.txt
 echo . >> LICENSE.txt
 echo libvorbis LICENSE >> LICENSE.txt
-type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright  >> LICENSE.txt
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright >> LICENSE.txt
 echo . >> LICENSE.txt
 
 echo successfully copied files!
