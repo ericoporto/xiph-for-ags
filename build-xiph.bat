@@ -13,18 +13,18 @@ mkdir include\ogg
 mkdir include\theora
 mkdir include\vorbis
 
-pushd %TEMP% 
-git clone https://github.com/Microsoft/vcpkg.git 
-pushd vcpkg 
-if not exist vcpkg.exe call bootstrap-vcpkg.bat 
-vcpkg install libogg:x86-windows-static libtheora:x86-windows-static libvorbis:x86-windows-static 
-vcpkg install libogg:x64-windows-static libtheora:x64-windows-static libvorbis:x64-windows-static 
-popd 
-popd 
+pushd %TEMP%
+git clone https://github.com/Microsoft/vcpkg.git
+pushd vcpkg
+if not exist vcpkg.exe call bootstrap-vcpkg.bat
+vcpkg install libogg:x86-windows-static libtheora:x86-windows-static libvorbis:x86-windows-static
+vcpkg install libogg:x64-windows-static libtheora:x64-windows-static libvorbis:x64-windows-static
+popd
+popd
 
-copy %TEMP%\vcpkg\installed\x86-windows-static\lib\ogg.lib lib\x86\libogg_static.lib 
-copy %TEMP%\vcpkg\installed\x86-windows-static\lib\theora.lib lib\x86\libtheora_static.lib 
-copy %TEMP%\vcpkg\installed\x86-windows-static\lib\vorbis.lib lib\x86\libvorbis_static.lib 
+copy %TEMP%\vcpkg\installed\x86-windows-static\lib\ogg.lib lib\x86\libogg_static.lib
+copy %TEMP%\vcpkg\installed\x86-windows-static\lib\theora.lib lib\x86\libtheora_static.lib
+copy %TEMP%\vcpkg\installed\x86-windows-static\lib\vorbis.lib lib\x86\libvorbis_static.lib
 copy %TEMP%\vcpkg\installed\x86-windows-static\lib\vorbisfile.lib lib\x86\libvorbisfile_static.lib
 
 copy %TEMP%\vcpkg\installed\x64-windows-static\lib\ogg.lib lib\x64\libogg_static.lib
