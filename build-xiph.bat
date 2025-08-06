@@ -4,7 +4,7 @@ echo creating directories...
 IF exist %TEMP%\nul ( echo %TEMP% ) ELSE ( mkdir %TEMP% )
 IF exist lib\nul ( del /s /f /q lib\*.* ) ELSE ( mkdir lib )
 IF exist include\nul ( del /s /f /q include\*.* ) ELSE ( mkdir include )
-IF exist %TEMP%\vcpkg ( del /s /f /q  %TEMP%\vcpkg ) 
+IF exist %TEMP%\vcpkg ( del /s /f /q  %TEMP%\vcpkg )
 
 IF exist lib\x86\nul ( del /s /f /q lib\x86\*.* ) ELSE ( mkdir lib\x86 )
 IF exist lib\x64\nul ( del /s /f /q lib\x64\*.* ) ELSE ( mkdir lib\x64 )
@@ -27,9 +27,9 @@ copy %TEMP%\vcpkg\installed\x86-windows-static\lib\theora.lib lib\x86\libtheora_
 copy %TEMP%\vcpkg\installed\x86-windows-static\lib\vorbis.lib lib\x86\libvorbis_static.lib 
 copy %TEMP%\vcpkg\installed\x86-windows-static\lib\vorbisfile.lib lib\x86\libvorbisfile_static.lib
 
-copy %TEMP%\vcpkg\installed\x64-windows-static\lib\ogg.lib lib\x64\libogg_static.lib 
-copy %TEMP%\vcpkg\installed\x64-windows-static\lib\theora.lib lib\x64\libtheora_static.lib 
-copy %TEMP%\vcpkg\installed\x64-windows-static\lib\vorbis.lib lib\x64\libvorbis_static.lib 
+copy %TEMP%\vcpkg\installed\x64-windows-static\lib\ogg.lib lib\x64\libogg_static.lib
+copy %TEMP%\vcpkg\installed\x64-windows-static\lib\theora.lib lib\x64\libtheora_static.lib
+copy %TEMP%\vcpkg\installed\x64-windows-static\lib\vorbis.lib lib\x64\libvorbis_static.lib
 copy %TEMP%\vcpkg\installed\x64-windows-static\lib\vorbisfile.lib lib\x64\libvorbisfile_static.lib
 
 copy %TEMP%\vcpkg\installed\x86-windows-static\include\ogg\*.h include\ogg\
@@ -38,7 +38,7 @@ copy %TEMP%\vcpkg\installed\x86-windows-static\include\vorbis\*.h include\vorbis
 
 type %TEMP%\vcpkg\installed\x86-windows-static\share\libogg\copyright
 type %TEMP%\vcpkg\installed\x86-windows-static\share\libtheora\copyright
-type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright 
+type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright
 
 echo xiph libogg libtheora libvorbis licenses > LICENSE.txt
 echo . >> LICENSE.txt
@@ -52,4 +52,4 @@ echo libvorbis LICENSE >> LICENSE.txt
 type %TEMP%\vcpkg\installed\x86-windows-static\share\libvorbis\copyright  >> LICENSE.txt
 echo . >> LICENSE.txt
 
-echo succesfully copied files!
+echo successfully copied files!
