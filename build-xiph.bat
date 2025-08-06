@@ -8,6 +8,7 @@ IF exist %TEMP%\vcpkg ( del /s /f /q  %TEMP%\vcpkg )
 
 IF exist lib\x86\nul ( del /s /f /q lib\x86\*.* ) ELSE ( mkdir lib\x86 )
 IF exist lib\x64\nul ( del /s /f /q lib\x64\*.* ) ELSE ( mkdir lib\x64 )
+IF exist lib\arm64\nul ( del /s /f /q lib\arm64\*.* ) ELSE ( mkdir lib\arm64 )
 
 mkdir include\ogg
 mkdir include\theora
@@ -19,6 +20,7 @@ pushd vcpkg
 if not exist vcpkg.exe call bootstrap-vcpkg.bat
 vcpkg install libogg:x86-windows-static libtheora:x86-windows-static libvorbis:x86-windows-static
 vcpkg install libogg:x64-windows-static libtheora:x64-windows-static libvorbis:x64-windows-static
+vcpkg install libogg:arm64-windows-static libtheora:arm64-windows-static libvorbis:arm64-windows-static
 popd
 popd
 
@@ -31,6 +33,11 @@ copy %TEMP%\vcpkg\installed\x64-windows-static\lib\ogg.lib lib\x64\libogg_static
 copy %TEMP%\vcpkg\installed\x64-windows-static\lib\theora.lib lib\x64\libtheora_static.lib
 copy %TEMP%\vcpkg\installed\x64-windows-static\lib\vorbis.lib lib\x64\libvorbis_static.lib
 copy %TEMP%\vcpkg\installed\x64-windows-static\lib\vorbisfile.lib lib\x64\libvorbisfile_static.lib
+
+copy %TEMP%\vcpkg\installed\arm64-windows-static\lib\ogg.lib lib\arm64\libogg_static.lib
+copy %TEMP%\vcpkg\installed\arm64-windows-static\lib\theora.lib lib\arm64\libtheora_static.lib
+copy %TEMP%\vcpkg\installed\arm64-windows-static\lib\vorbis.lib lib\arm64\libvorbis_static.lib
+copy %TEMP%\vcpkg\installed\arm64-windows-static\lib\vorbisfile.lib lib\arm64\libvorbisfile_static.lib
 
 copy %TEMP%\vcpkg\installed\x86-windows-static\include\ogg\*.h include\ogg\
 copy %TEMP%\vcpkg\installed\x86-windows-static\include\theora\*.h include\theora\
