@@ -5,7 +5,7 @@ trigger:
       - refs/tags/*
 
 pool:
-  vmImage: 'windows-2019'
+  vmImage: 'windows-2022'
 
 steps:
 - script: call build-xiph.bat
@@ -27,7 +27,7 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.SourcesDirectory)/builds/xiph-for-ags.zip'
   
-- task: GithubRelease@0
+- task: GithubRelease@1
   condition: startsWith(variables['Build.SourceBranch'], 'refs/tags/')   
   displayName: 'Create GitHub Release'
   inputs:
